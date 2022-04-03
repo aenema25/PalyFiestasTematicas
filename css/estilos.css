@@ -1,3 +1,6 @@
+* {
+    box-sizing:border-box;
+}
 body {
     margin:0;
     padding:0;
@@ -8,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
 }
-main {
+main{
     flex-grow: 1;
  }
 .portada img {
@@ -31,6 +34,10 @@ main {
     column-gap: 30px;
     padding:50px;
 }
+.featured div{
+    max-width: 400px;
+    margin:0 auto;
+}
 .featured div:hover {
     transition: .3s ease-in;
     transform: scale(1.1);   
@@ -38,10 +45,15 @@ main {
 section {
     padding: 2.3em;
 }
+section div{
+    max-width: 600px;
+    margin:0 auto;
+}
 .grid {
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
+    gap: 2em;
 }
 .navbar {
     display:flex;
@@ -115,12 +127,12 @@ section {
 .colored-section {
     background-color:#FFCBCB;
 }
-.contacto{
+.redesSociales{
     text-align: justify;
     font-size: 18px;
     font-weight: bolder;
 }
-.contacto i{
+.redesSociales i{
    vertical-align: middle;
    padding-right:10px
 }
@@ -176,7 +188,7 @@ section {
     bottom: 0;
     background: #FFCBCB;
     color: #f1f1f1;
-    width: calc(100% - 2.5rem);
+    width: 100%;
     transition: .5s ease;
     opacity:0;
     color: black;
@@ -187,6 +199,77 @@ section {
 .imagen1:hover .overlay,.imagen2:hover .overlay,.imagen3:hover .overlay,.imagen4:hover .overlay,.imagen5:hover .overlay,.imagen6:hover .overlay,.imagen7:hover .overlay {
     opacity: 0.7;
 }
+/* css servicios */
+.contenedorServicios {
+    max-width: 1200px;
+    max-height: 550px;
+    margin: 0 auto 2em;
+    display: grid;
+    grid-template-columns: repeat(3, calc(33.3333% - 18px));
+    grid-column-gap: 2em;  
+    justify-content: space-around;
+}
+.tarjetaServicios{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFCBCB;
+    border-radius: 20px;
+}
+.tarjetaServicios:hover {
+    transition: .2s ease-in-out;
+    transform: scale(1.05);
+}
+.imagenServicios{
+    width: 100%;
+    height: 100%;
+}
+.contenedorTarjetaServicios {
+    padding:2rem;
+}
+.contenedorTarjetaServicios:last-child{
+    margin-top: auto;   
+}
+/* css contacto */
+.contactoContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.contacto {
+    width:100%;
+    display: grid;
+    grid-template-columns: 100px 0.5fr;
+    gap:20px;
+    align-items: center;
+}
+.contacto label {
+    grid-column: 1 / 2;
+}
+ 
+.contacto input, .contacto button,.contacto textarea {
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 3px 3px 0px 3px #CFC9C9;
+    padding:10px;
+    grid-column: 2 / 3;
+}
+.botonContacto{
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 3px 3px 0px 3px #CFC9C9;
+    padding:10px;
+    box-shadow: unset;
+    font-size: 0.9em;
+    color:white;
+    background-color: #0077b6;
+}
+.botonContacto:hover{
+    transition: ease-in-out .4s;
+    transform: scale(1.1);
+    box-shadow: unset;
+    font-size: 0.9em;
+    color:white;
+    background-color: #5999D9;
+}
 
 @media only screen and (max-width: 600px) {
     body{
@@ -195,24 +278,10 @@ section {
     .menu-icon {
         display:block;
     }
-    .contacto{
+    .redesSociales{
         text-align: justify;
         font-size: 14px;
         padding: 10px;
-    }
-    .subir{
-        position:fixed;
-        z-index: 99;
-        display: block;
-        font-size: 48px;
-        bottom:20px;
-        right:45vw;
-        opacity: 50%;
-        color:#FF6B6B;
-        transition: all 1s;
-    }
-    .subir:hover{
-        opacity: 100%;
     }
     .navbar{
         display: grid;
@@ -244,5 +313,26 @@ section {
         'cinco'
         'seis'
         'siete';
+    }
+    /* servicios */
+    .contenedorServicios {
+        grid-template-columns: auto;
+        flex-direction: column;
+        max-height: 100%;
+        row-gap: 2em;
+    }
+    /* contacto */
+    .contacto {
+        display: flex;
+        flex-direction: column;
+    }
+    .contacto input{
+        width: 100%;
+    }
+    .contacto textarea {
+        width:100%;
+    }
+    .botonContacto {
+        width: 100%;
     }
 }
