@@ -1,7 +1,2 @@
-function menu(){
-    if(document.getElementById('menu').style.display === 'none' || document.getElementById('menu').style.display === ''){
-        document.getElementById('menu').style.display='block';
-    }else{
-        document.getElementById('menu').style.display='none';
-    }  
-}
+const menuList = document.getElementById('menu')
+const menu = () => {menuList.style.display === 'none' || menuList.style.display === '' ? menuList.style.display = 'block' : menuList.style.display = 'none' }
