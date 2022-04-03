@@ -40,15 +40,20 @@
     </header>
     <main>
         <h1>Contactanos</h1>
-        <section>
-            <form class='form'>
-                <label for='nombre'>Nombre Completo</label>
-                <input type="text" name='nombre' required />
-                <label for='correo'>Correo</label>
-                <input type='email' name='correo' required />
-                <labe for='mensaje'>Mensaje</labe>
-                <input type='textarea' name='mensaje' required />
-                <button type='submit'>enviar</button>
+        <section class='contactoContainer grid'>
+            <div>
+                <img class='imagenServicios' src='imagenes/contact.svg'>
+            </div>
+            <form class='contacto'>
+                <label for='nombre' >Nombre :</label>
+                <input type="text" name='nombre' class='nombreInput' required />
+                <label for='apellido' >Apellido :</label>
+                <input type="text" name='nombre'  required />
+                <label for='correo' >Correo :</label>
+                <input type='email' name='correo' class='correoInput' required />
+                <labe for='mensaje' >Mensaje :</labe>
+                <textarea rows="5" cols="50" name='mensaje' required ></textarea>
+                <button type='submit' class='botonContacto'>Enviar</button>
             </form>
         </section>
     </main>
