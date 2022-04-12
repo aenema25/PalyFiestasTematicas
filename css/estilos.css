@@ -13,7 +13,7 @@ body {
 }
 main{
     flex-grow: 1;
- }
+}
 .portada img {
     max-width: 100%;
     vertical-align: bottom;
@@ -271,9 +271,9 @@ section div{
     background-color: #5999D9;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     body{
-        font-size: 1rem
+        font-size: 1rem;
     }
     .menu-icon {
         display:block;
