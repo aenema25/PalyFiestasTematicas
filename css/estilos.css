@@ -335,4 +335,8 @@ section div{
     .botonContacto {
         width: 100%;
     }
+    .portada img{
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
 }
