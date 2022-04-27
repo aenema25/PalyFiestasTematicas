@@ -1,54 +1,22 @@
 * {
     box-sizing:border-box;
-}
-body {
     margin:0;
     padding:0;
+}
+body {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 main{
     flex-grow: 1;
 }
-.portada img {
-    max-width: 100%;
-    max-height: 90vh;
-    vertical-align: bottom;
-}
-.menu-icon{
-    display:none;
-    grid-area: menu-icon;
-}
-.menu-icon button{
-    all:unset;
-}
-.subir{
-    display:none;
-}
-.featured {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    column-gap: 30px;
-    padding:50px;
-}
-.featured div{
-    max-width: 400px;
-    margin:0 auto;
-}
 .featured div:hover {
     transition: .3s ease-in;
     transform: scale(1.1);   
-}
-section {
-    padding: 2.3em;
-}
-section div{
-    max-width: 600px;
-    margin:0 auto;
 }
 .preAnimacion {
     opacity: 0;
@@ -59,45 +27,25 @@ section div{
     opacity: 1;
     transform: translateY(0px);
 }
-.grid {
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    gap: 2em;
+.carousel-item > img {
+    min-height: 80vh;
+    max-height: 100vh;
 }
 .navbar {
-    display:flex;
-    align-items: center;
-    justify-content:space-evenly;
     background-color:#FFCBCB;
-}
-.navbar ul {
-    display:flex;
-    gap:1em;
-    list-style: none;
 }
 .navbar li a{
     color:#483635;
-    text-decoration: none;
 }
 .navbar li:hover{
     transition: .3s ease-in;
     transform: scale(1.2);   
-}
-.logo {
-    grid-area: logo;
-    padding:10px;
-}
-.logo img{
-    width:180px;
-    height:80px;
 }
 .footer {
     display:flex;
     align-items: center;
     justify-content: space-between;
     background-color:#FFCBCB;
-    
 }
 .footer ul {
     gap:1em;
@@ -123,12 +71,6 @@ section div{
 .purple{
     color:#BAABDA
 }
-.rrss {
-    padding:10px;
-    display:flex;
-    gap:1em;
-    grid-area: rrss;
-}
 .rrss i:hover {
     text-shadow: 0 0 2.5px ;
     transition: .2s ease-in;
@@ -139,7 +81,6 @@ section div{
 }
 .redesSociales{
     text-align: justify;
-    font-size: 18px;
     font-weight: bolder;
 }
 .redesSociales i{
@@ -148,49 +89,10 @@ section div{
 }
 /* css galeria */
 .galeria {
-    padding-right: 10%;
-    padding-left: 10%;
-    display: grid;
-    grid-gap: 15px;
-    grid-template: 'uno dos'
-    'tres dos '
-    'siete cinco'
-    'seis cuatro';
-    justify-content: center;
-}
-.galeria img {
-    border-radius: 15px;
-    display:block;
-    width:100%;
-    height:100%; 
-}
-.imagen1{
     position: relative;
-    grid-area:uno;
 }
-.imagen2{
-    position: relative;
-    grid-area:dos;
-}
-.imagen3{
-    position: relative;
-    grid-area:tres;
-}
-.imagen4{
-    position: relative;
-    grid-area:cuatro;
-}
-.imagen5{
-    position: relative;
-    grid-area:cinco;
-}
-.imagen6{
-    position: relative;
-    grid-area:seis;
-}
-.imagen7{
-    position: relative;
-    grid-area:siete;
+.galeria img{
+    border-radius: 15px ;
 }
 .overlay {
     position: absolute;
@@ -198,30 +100,20 @@ section div{
     bottom: 0;
     background: #FFCBCB;
     color: #f1f1f1;
-    width: 100%;
+    width: calc(100% - 1.5rem);
     transition: .5s ease;
     opacity:0;
     color: black;
     font-size: 20px;
     padding: 20px;
     text-align: center;
+
   }
-.imagen1:hover .overlay,.imagen2:hover .overlay,.imagen3:hover .overlay,.imagen4:hover .overlay,.imagen5:hover .overlay,.imagen6:hover .overlay,.imagen7:hover .overlay {
+.galeria:hover .overlay {
     opacity: 0.7;
 }
 /* css servicios */
-.contenedorServicios {
-    max-width: 1200px;
-    max-height: 550px;
-    margin: 0 auto 2em;
-    display: grid;
-    grid-template-columns: repeat(3, calc(33.3333% - 18px));
-    grid-column-gap: 2em;  
-    justify-content: space-around;
-}
 .tarjetaServicios{
-    display: flex;
-    flex-direction: column;
     background-color: #FFCBCB;
     border-radius: 20px;
 }
@@ -229,46 +121,25 @@ section div{
     transition: .2s ease-in-out;
     transform: scale(1.05);
 }
-.imagenServicios{
-    width: 100%;
-    height: 100%;
-}
-.contenedorTarjetaServicios {
-    padding:2rem;
-}
-.contenedorTarjetaServicios:last-child{
-    margin-top: auto;   
-}
 /* css contacto */
-.contactoContainer {
-    max-width: 1200px;
-    margin: 0 auto;
-}
 .contacto {
-    width:100%;
-    display: grid;
-    grid-template-columns: 100px 0.5fr;
-    gap:20px;
-    align-items: center;
+    max-width: 1200px;
 }
-.contacto label {
-    grid-column: 1 / 2;
-}
- 
 .contacto input, .contacto button,.contacto textarea {
+    width: 100%;
+    padding:5px;
     border-radius: 5px;
     border: 0;
     box-shadow: 3px 3px 0px 3px #CFC9C9;
-    padding:10px;
-    grid-column: 2 / 3;
 }
 .botonContacto{
+    font-weight: bold;
     border-radius: 5px;
     border: 0;
     box-shadow: 3px 3px 0px 3px #CFC9C9;
-    padding:10px;
+    padding: 5px;
     box-shadow: unset;
-    font-size: 0.9em;
+    font-size: 1em;
     color:white;
     background-color: #0077b6;
 }
@@ -280,74 +151,16 @@ section div{
     color:white;
     background-color: #5999D9;
 }
-
-
 @media only screen and (max-width: 900px) {
     body{
         font-size: 1rem;
     }
-    .menu-icon {
-        display:block;
-    }
-    .redesSociales{
-        text-align: justify;
-        font-size: 14px;
-        padding: 10px;
-    }
-    .navbar{
-        display: grid;
-        grid-template: 'logo rrss menu-icon'
-        'menu menu menu';
-    }
-    .navbar ul{
-        display: none;
-        text-align: justify;
-    }
-    .rrss{
-        font-size: 12px;
-    }
-    .footer ul{
-        display: none; 
-    }
-    .grid{
-        grid-template-columns: auto;
-    }
-    .featured{
-        grid-template-columns: auto;
-    }
-    /* galeria */
-    .galeria {
-        grid-template: 'uno'
-        'dos'
-        'tres'
-        'cuatro'
-        'cinco'
-        'seis'
-        'siete';
-    }
-    /* servicios */
-    .contenedorServicios {
-        grid-template-columns: auto;
-        flex-direction: column;
-        max-height: 100%;
-        row-gap: 2em;
-    }
-    /* contacto */
-    .contacto {
-        display: flex;
-        flex-direction: column;
-    }
-    .contacto input{
-        width: 100%;
-    }
-    .contacto textarea {
-        width:100%;
-    }
-    .botonContacto {
-        width: 100%;
-    }
-    .portada img{
+    .carousel-item > img {
         aspect-ratio: 1/1;
         object-fit: cover;
+        min-height: 70vh;
+    }
+    .footer ul {
+        display:none;
     }
 }
