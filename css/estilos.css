@@ -28,8 +28,9 @@ main{
     transform: translateY(0px);
 }
 .carousel-item > img {
-    min-height: 80vh;
-    max-height: 100vh;
+    max-height: 80vh;
+    aspect-ratio: 16/9;
+    object-fit: cover;
 }
 .navbar {
     background-color:#FFCBCB;
@@ -156,7 +157,7 @@ main{
         font-size: 1rem;
     }
     .carousel-item > img {
-        aspect-ratio: 1/1;
+        aspect-ratio: 4/3;
         object-fit: cover;
         min-height: 70vh;
     }
