@@ -1,167 +1,200 @@
 * {
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 body {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100vh;
 }
-main{
-    flex-grow: 1;
+
+main {
+  flex-grow: 1;
 }
+
 .featured div:hover {
-    transition: .3s ease-in;
-    transform: scale(1.1);   
+  transition: 0.3s ease-in;
+  transform: scale(1.1);
 }
+
 .preAnimacion {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: transform 1.5s, opacity 2s;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 1.5s, opacity 2s;
 }
+
 .animacionEntrada {
-    opacity: 1;
-    transform: translateY(0px);
+  opacity: 1;
+  transform: translateY(0px);
 }
-.carousel-item > img {
-    max-height: 80vh;
-    aspect-ratio: 16/9;
-    object-fit: cover;
+
+.carousel-item img {
+  max-height: 80vh;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
+
 .navbar {
-    background-color:#FFCBCB;
+  background-color: #FFCBCB;
 }
-.navbar li a{
-    color:#483635;
+
+.navbar li a {
+  color: #483635;
 }
-.navbar li:hover{
-    transition: .3s ease-in;
-    transform: scale(1.2);   
+
+.navbar li:hover {
+  transition: 0.3s ease-in;
+  transform: scale(1.2);
 }
+
 .footer {
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color:#FFCBCB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFCBCB;
 }
+
 .footer ul {
-    gap:1em;
-    list-style: none;
+  gap: 1em;
+  list-style: none;
 }
-.footer li a{
-    color:#483635;
-    text-decoration: none;
+
+.footer li a {
+  color: #483635;
+  text-decoration: none;
 }
-.footer li a:hover{
-    display: inline-block;
-    background-color: #d8a2a1;
+
+.footer li a:hover {
+  display: inline-block;
+  background-color: #d8a2a1;
 }
+
 .blue {
-    color:#0077b6;
+  color: #0077b6;
 }
+
 .orange {
-    color:#e07a5f;
+  color: #e07a5f;
 }
+
 .green {
-    color:#40916c;
+  color: #40916c;
 }
-.purple{
-    color:#BAABDA
+
+.purple {
+  color: #BAABDA;
 }
+
 .rrss i:hover {
-    text-shadow: 0 0 2.5px ;
-    transition: .2s ease-in;
-    transform: scale(1.1);   
+  text-shadow: 0 0 2.5px;
+  transition: 0.2s ease-in;
+  transform: scale(1.1);
 }
+
 .colored-section {
-    background-color:#FFCBCB;
+  background-color: #FFCBCB;
 }
-.redesSociales{
-    text-align: justify;
-    font-weight: bolder;
+
+.redesSociales {
+  text-align: justify;
+  font-weight: bolder;
 }
-.redesSociales i{
-   vertical-align: middle;
-   padding-right:10px
+
+.redesSociales i {
+  vertical-align: middle;
+  padding-right: 10px;
 }
+
 /* css galeria */
 .galeria {
-    position: relative;
+  position: relative;
 }
-.galeria img{
-    border-radius: 15px ;
-}
-.overlay {
-    position: absolute;
-    border-radius: 0 0 15px 15px;
-    bottom: 0;
-    background: #FFCBCB;
-    color: #f1f1f1;
-    width: calc(100% - 1.5rem);
-    transition: .5s ease;
-    opacity:0;
-    color: black;
-    font-size: 20px;
-    padding: 20px;
-    text-align: center;
 
-  }
-.galeria:hover .overlay {
-    opacity: 0.7;
+.galeria img {
+  border-radius: 15px;
 }
+
+.overlay {
+  position: absolute;
+  border-radius: 0 0 15px 15px;
+  bottom: 0;
+  background: #FFCBCB;
+  color: #f1f1f1;
+  width: calc(100% - 1.5rem);
+  transition: 0.5s ease;
+  opacity: 0;
+  color: black;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.galeria:hover .overlay {
+  opacity: 0.7;
+}
+
 /* css servicios */
-.tarjetaServicios{
-    background-color: #FFCBCB;
-    border-radius: 20px;
+.tarjetaServicios {
+  background-color: #FFCBCB;
+  border-radius: 20px;
 }
 .tarjetaServicios:hover {
-    transition: .2s ease-in-out;
-    transform: scale(1.05);
+  transition: 0.2s ease-in-out;
+  transform: scale(1.05);
 }
+
 /* css contacto */
 .contacto {
-    max-width: 1200px;
+  max-width: 1200px;
 }
-.contacto input, .contacto button,.contacto textarea {
-    width: 100%;
-    padding:5px;
-    border-radius: 5px;
-    border: 0;
-    box-shadow: 3px 3px 0px 3px #CFC9C9;
+
+.contacto input, .contacto button, .contacto textarea {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 3px 3px 0px 3px #CFC9C9;
 }
-.botonContacto{
-    font-weight: bold;
-    border-radius: 5px;
-    border: 0;
-    box-shadow: 3px 3px 0px 3px #CFC9C9;
-    padding: 5px;
-    box-shadow: unset;
-    font-size: 1em;
-    color:white;
-    background-color: #0077b6;
+
+.botonContacto {
+  font-weight: bold;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 3px 3px 0px 3px #CFC9C9;
+  padding: 5px;
+  box-shadow: unset;
+  font-size: 1em;
+  color: #f1f1f1;
+  background-color: #0077b6;
 }
-.botonContacto:hover{
-    transition: ease-in-out .4s;
-    transform: scale(1.1);
-    box-shadow: unset;
-    font-size: 0.9em;
-    color:white;
-    background-color: #5999D9;
+.botonContacto:hover {
+  transition: ease-in-out 0.4s;
+  transform: scale(1.1);
+  box-shadow: unset;
+  font-size: 0.9em;
+  color: #f1f1f1;
+  background-color: #5999D9;
 }
+
 @media only screen and (max-width: 900px) {
-    body{
-        font-size: 1rem;
-    }
-    .carousel-item > img {
-        aspect-ratio: 4/3;
-        object-fit: cover;
-        min-height: 70vh;
-    }
-    .footer ul {
-        display:none;
-    }
+  body {
+    font-size: 1rem;
+  }
+
+  .carousel-item img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    min-height: 70vh;
+  }
+
+  .footer ul {
+    display: none;
+  }
 }
+
+/*# sourceMappingURL=estilos.css.map */
