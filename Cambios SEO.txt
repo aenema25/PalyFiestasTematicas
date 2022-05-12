@@ -4,3 +4,4 @@ Lista de cambios para optimización SEO:
 -Modificado título de cada página para hacerlo más descriptivo.
 -Agregadas keywords relevantes al contenido de cada página.
 -Optimizado tamaño de imágenes usadas para el proyecto.
+-Agregado ALT descriptivo para imagenes del sitio web.
