@@ -16,11 +16,13 @@ $tamaño-fuente: ("titulo": 2em, "parrafo": 1.5rem, "textoEspecial" : 1.3rem);
     box-shadow: 3px 3px 0px 3px $color-plateado;
     padding: 5px;
 }
+
 * {
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -29,134 +31,160 @@ body {
     font-size: 1.6em;
     min-height: 100vh;
 }
-main{
+
+main {
     flex-grow: 1;
 }
+
 .titulos {
-    font-size: map-get($tamaño-fuente , "titulo" );
+    font-size: map-get($tamaño-fuente, "titulo");
 }
+
 .parrafos {
-    font-size: map-get($tamaño-fuente, "parrafo" );
+    font-size: map-get($tamaño-fuente, "parrafo");
     font-weight: 100;
 }
+
 .parrafoInformacion {
-    font-size: map-get($tamaño-fuente, "textoEspecial" );
+    font-size: map-get($tamaño-fuente, "textoEspecial");
 }
-.featured{ 
-    div{
+
+.featured {
+    div {
         &:hover {
             transition: .3s ease-in;
-            transform: scale(1.1);   
+            transform: scale(1.1);
         }
     }
 }
+
 .preAnimacion {
     opacity: 0;
     transform: translateY(100px);
     transition: transform 1.5s, opacity 2s;
 }
+
 .animacionEntrada {
     opacity: 1;
     transform: translateY(0px);
 }
-.carousel-item{ 
+
+.carousel-item {
     img {
         max-height: 80vh;
         aspect-ratio: 16/9;
         object-fit: cover;
     }
 }
+
 .navbar {
-    background-color:$color-rosa;
+    background-color: $color-rosa;
 }
+
 .navbar {
-    li{ 
-        a{
-            color:$color-cafe;
+    li {
+        a {
+            color: $color-cafe;
         }
     }
 }
-.navbar{ 
-    li{
-        &:hover{
+
+.navbar {
+    li {
+        &:hover {
             transition: .3s ease-in;
-            transform: scale(1.2);   
+            transform: scale(1.2);
         }
     }
 }
+
 .footer {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color:$color-rosa;
+    background-color: $color-rosa;
 }
-.footer{ 
+
+.footer {
     ul {
-        gap:1em;
+        gap: 1em;
         list-style: none;
     }
 }
+
 .footer {
-    li{ 
-        a{
-            color:$color-cafe;
+    li {
+        a {
+            color: $color-cafe;
             text-decoration: none;
         }
     }
 }
-.footer{ 
-    li{ 
-        a{
-            &:hover{
+
+.footer {
+    li {
+        a {
+            &:hover {
                 display: inline-block;
                 background-color: $color-rosa-2;
             }
         }
     }
 }
+
 .blue {
-    color:$color-azul;
+    color: $color-azul;
 }
+
 .orange {
-    color:$color-naraja;
+    color: $color-naraja;
 }
+
 .green {
-    color:$color-verde;
+    color: $color-verde;
 }
-.purple{
-    color:$color-morado;
+
+.purple {
+    color: $color-morado;
 }
-.rrss{ 
-    i{
+
+.rrss {
+    i {
         &:hover {
-            text-shadow: 0 0 2.5px ;
+            text-shadow: 0 0 2.5px;
             transition: .2s ease-in;
-            transform: scale(1.1);   
+            transform: scale(1.1);
         }
     }
 }
+
 .colored-section {
-    background-color:$color-rosa;
+    background-color: $color-rosa;
 }
-.redesSociales{
+
+.redesSociales {
     text-align: justify;
     font-weight: bolder;
 }
-.redesSociales{ 
-    i{
+
+.redesSociales {
+    i {
         vertical-align: middle;
-        padding-right:10px
+        padding-right: 10px
+    }
 }
-}
+
 /* css galeria */
 .galeria {
     position: relative;
 }
-.galeria{ 
-    img{
-        border-radius: 15px ;
+
+.galeria {
+    img {
+        border-radius: 15px;
     }
 }
+
 .overlay {
     position: absolute;
     border-radius: 0 0 15px 15px;
@@ -165,130 +193,185 @@ main{
     color: $color-crema;
     width: calc(100% - 1.5rem);
     transition: .5s ease;
-    opacity:0;
+    opacity: 0;
     color: black;
     font-size: 20px;
     padding: 20px;
     text-align: center;
 }
-.galeria{
-    &:hover{ 
+
+.galeria {
+    &:hover {
         .overlay {
             opacity: 0.7;
         }
     }
 }
+
 /* css servicios */
-.tarjetaServicios{
+.tarjetaServicios {
     background-color: $color-rosa;
     border-radius: 20px;
+
     &:hover {
         transition: .2s ease-in-out;
         transform: scale(1.05);
     }
 }
+
 /* css contacto */
 .contacto {
     max-width: 1200px;
 }
+
 .elementosContacto {
     @include estiloInput;
     width: 100%;
 }
-.botonContacto{
+
+.botonContacto {
     @extend .elementosContacto;
     font-weight: bold;
     font-size: 1em;
-    color:$color-crema;
+    color: $color-crema;
     background-color: $color-azul;
-    &:hover{
+
+    &:hover {
         @extend .botonContacto;
         transition: ease-in-out .4s;
         transform: scale(1.1);
         background-color: $color-azul-hover;
     }
 }
+
+.carousel-caption {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 4%, rgba(0, 0, 0, 0.5) 42%, rgba(0, 0, 0, 0.7) 100%);
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.tituloCarousel {
+    @extend .titulos;
+    font-weight: 600;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+        0px 8px 13px rgba(0, 0, 0, 0.1),
+        0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+.parrafoCarousel {
+    @extend .parrafos;
+    font-weight: 500;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+        0px 8px 13px rgba(0, 0, 0, 0.1),
+        0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
 @media only screen and (max-width: 1200px) {
-    body{
+    body {
         font-size: 1.3rem;
     }
-    .titulos{
+
+    .titulos {
         font-size: calc(#{map-get($tamaño-fuente, "titulo")}/1.1);
 
     }
-    .parrafos{
+
+    .parrafos {
         font-size: calc(#{map-get($tamaño-fuente, "parrafo")}/1.1);
     }
-    .parrafoInformacion{
+
+    .parrafoInformacion {
         font-size: calc(#{map-get($tamaño-fuente, "textoEspecial")}/1.1);
     }
 }
+
 @media only screen and (max-width: 950px) {
-    body{
+    body {
         font-size: 1.1rem;
     }
-    .titulos{
+
+    .titulos {
         font-size: calc(#{map-get($tamaño-fuente, "titulo")}/1.3);
 
     }
-    .parrafos{
+
+    .parrafos {
         font-size: calc(#{map-get($tamaño-fuente, "parrafo")}/1.3);
     }
-    .parrafoInformacion{
+
+    .parrafoInformacion {
         font-size: calc(#{map-get($tamaño-fuente, "textoEspecial")}/1.3);
     }
 }
+
 @media only screen and (max-width: 770px) {
-    body{
+    body {
         font-size: 1.4rem;
     }
-    .titulos{
+
+    .titulos {
         font-size: calc(#{map-get($tamaño-fuente, "titulo")}/1.1);
 
     }
-    .parrafos{
+
+    .parrafos {
         font-size: calc(#{map-get($tamaño-fuente, "parrafo")}/1.1);
     }
-    .parrafoInformacion{
+
+    .parrafoInformacion {
         font-size: calc(#{map-get($tamaño-fuente, "textoEspecial")}/1.1);
     }
-    .carousel-item{
+
+    .carousel-item {
         img {
             aspect-ratio: 4/3;
             object-fit: cover;
             min-height: 70vh;
         }
     }
-    .footer{ 
+
+    .footer {
         ul {
-            display:none;
+            display: none;
         }
     }
 }
+
 @media only screen and (max-width: 500px) {
-    body{
+    body {
         font-size: 1.2rem;
     }
-    .titulos{
+
+    .titulos {
         font-size: calc(#{map-get($tamaño-fuente, "titulo")}/1.2);
 
     }
-    .parrafos{
+
+    .parrafos {
         font-size: calc(#{map-get($tamaño-fuente, "parrafo")}/1.2);
     }
-    .parrafoInformacion{
+
+    .parrafoInformacion {
         font-size: calc(#{map-get($tamaño-fuente, "textoEspecial")}/1.2);
     }
-    .carousel-item{
+
+    .carousel-item {
         img {
             aspect-ratio: 1/1;
             object-fit: cover;
             min-height: 70vh;
         }
     }
-    .footer{ 
+
+    .footer {
         ul {
-            display:none;
+            display: none;
         }
     }
 }
