@@ -17,6 +17,38 @@ $tamaño-fuente: ("titulo": 2em, "parrafo": 1.5rem, "textoEspecial" : 1.3rem);
     padding: 5px;
 }
 
+@mixin botonContactoRRSS($color) {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    border-radius: 10px;
+    background-color: white;
+    background: linear-gradient(to right, white 58%, $color 50%) left;
+    background-size: 200%;
+    transition: .3s ease-out;
+    a {
+        text-decoration: none;
+    }
+    p {
+        font-size: 1.3em;
+        color: $color;
+        padding-right: 10px;
+        
+        i {
+            font-size: 3em;
+            margin: -7px 0 -7px 0;
+        }
+
+        &:hover {
+            color: white;
+
+        }
+    }
+
+
+    &:hover {
+        background-position: right;
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -91,9 +123,10 @@ main {
 
 .navbar {
     li {
+        padding-left: 0.3em;
         &:hover {
             transition: .3s ease-in;
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
     }
 }
@@ -150,6 +183,8 @@ main {
 
 .rrss {
     i {
+        font-size: 2em;
+
         &:hover {
             text-shadow: 0 0 2.5px;
             transition: .2s ease-in;
@@ -213,13 +248,55 @@ main {
 
 /* css servicios */
 .tarjetaServicios {
-    background-color: $color-rosa;
-    border-radius: 20px;
-
-    &:hover {
-        transition: .2s ease-in-out;
-        transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border-radius: 10px;
+    margin-bottom: 100px;
+    transition: margin-bottom 0s linear;
+    background-image: url('../imagenes/fondotarjeta.svg');
+    background-size: cover;
+    color: white;
+    text-shadow: -15px 5px 20px #ced0d3;
+    i {
+        animation: updown 1.5s ease infinite;
     }
+    .contenidoTarjeta {
+        visibility: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: opacity 1.3s, max-height 1s, visibility 0.1s ease-in;
+    }
+    &:hover {
+        .contenidoTarjeta {
+            visibility: visible;
+            opacity: 1;
+            max-height: 200px;
+        }
+        i{
+            animation: unset;
+        }
+        transition: .3s ease-in-out;
+        transform: scale(1.01);
+    }
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(-25%);
+    }
+
+    50% {
+        transform: translateY(25%);
+    }
+
+    100% {
+        transform: translateY(-25%);
+    }
+}
+
+.imagenTarjeta {
+    height: 40vh;
+    object-fit: cover;
+    aspect-ratio: 5/4;
 }
 
 /* css contacto */
@@ -234,7 +311,7 @@ main {
 
 .botonContacto {
     @extend .elementosContacto;
-    font-weight: bold;
+    box-shadow: unset;
     font-size: 1em;
     color: $color-crema;
     background-color: $color-azul;
@@ -242,7 +319,7 @@ main {
     &:hover {
         @extend .botonContacto;
         transition: ease-in-out .4s;
-        transform: scale(1.1);
+        transform: scale(1.05);
         background-color: $color-azul-hover;
     }
 }
@@ -275,14 +352,27 @@ main {
         0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
+/* botones rrss */
+
+.rrss-1 {
+    @include botonContactoRRSS($color-azul);
+}
+
+.rrss-2 {
+    @include botonContactoRRSS($color-naraja)
+}
+
+.rrss-3 {
+    @include botonContactoRRSS($color-verde)
+}
+
 @media only screen and (max-width: 1200px) {
     body {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .titulos {
         font-size: calc(#{map-get($tamaño-fuente, "titulo")}/1.1);
-
     }
 
     .parrafos {
@@ -294,9 +384,24 @@ main {
     }
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 990px) {
     body {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+    }
+
+    .rrss-1,
+    .rrss-2,
+    .rrss-3 {
+        p {
+            font-size: 1.25em;
+
+            i {
+                margin: -5px 0 -5px 0;
+            }
+        }
+    }
+    .imagenTarjeta {
+        height: 20vh;
     }
 
     .titulos {
@@ -313,11 +418,25 @@ main {
     }
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 767px) {
     body {
         font-size: 1.4rem;
     }
 
+    .rrss-1,
+    .rrss-2,
+    .rrss-3 {
+        p {
+            font-size: 1.3em;
+
+            i {
+                margin: -6px 0 -6px 0;
+            }
+        }
+    }
+    .imagenTarjeta {
+        height: 45vh;
+    }
     .titulos {
         font-size: calc(#{map-get($tamaño-fuente, "titulo")}/1.1);
 
@@ -346,10 +465,11 @@ main {
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 520px) {
     body {
         font-size: 1.2rem;
     }
+
 
     .titulos {
         font-size: calc(#{map-get($tamaño-fuente, "titulo")}/1.2);
@@ -359,7 +479,9 @@ main {
     .parrafos {
         font-size: calc(#{map-get($tamaño-fuente, "parrafo")}/1.2);
     }
-
+    .imagenTarjeta {
+        height: 40vh;
+    }
     .parrafoInformacion {
         font-size: calc(#{map-get($tamaño-fuente, "textoEspecial")}/1.2);
     }
@@ -376,5 +498,11 @@ main {
         ul {
             display: none;
         }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .imagenTarjeta {
+        height: 35vh;
     }
 }
