@@ -1,0 +1,47 @@
+$color-rosa:#FFCBCB;
+$color-rosa-2:#d8a2a1;
+$color-cafe:#483635;
+$color-azul:#0077b6;
+$color-azul-hover:#5999D9;
+$color-naraja:#e07a5f;
+$color-verde:#40916c;
+$color-morado:#BAABDA;
+$color-crema:#f1f1f1;
+$color-plateado:#CFC9C9;
+$tamaño-fuente: ("titulo": 2em, "parrafo": 1.5rem, "textoEspecial" : 1.3rem);
+
+@mixin botonContactoRRSS($color) {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    border-radius: 10px;
+    background-color: white;
+    background: linear-gradient(to right, white 58%, $color 50%) left;
+    background-size: 200%;
+    transition: .3s ease-out;
+    a {
+        text-decoration: none;
+    }
+    p {
+        font-size: 1.3em;
+        color: $color;
+        padding-right: 10px;
+        
+        i {
+            font-size: 3em;
+            margin: -7px 0 -7px 0;
+        }
+        &:hover {
+            color: white;
+
+        }
+    }
+    &:hover {
+        background-position: right;
+    }
+}
+
+@mixin estiloInput {
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 3px 3px 0px 3px $color-plateado;
+    padding: 5px;
+}

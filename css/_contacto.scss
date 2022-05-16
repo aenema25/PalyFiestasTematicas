@@ -1,0 +1,25 @@
+@import 'variables';
+
+.contacto {
+    max-width: 1200px;
+}
+
+.elementosContacto {
+    @include estiloInput;
+    width: 100%;
+}
+
+.botonContacto {
+    @extend .elementosContacto;
+    box-shadow: unset;
+    font-size: 1em;
+    color: $color-crema;
+    background-color: $color-azul;
+
+    &:hover {
+        @extend .botonContacto;
+        transition: ease-in-out .4s;
+        transform: scale(1.05);
+        background-color: $color-azul-hover;
+    }
+}

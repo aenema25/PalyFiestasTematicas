@@ -1,0 +1,59 @@
+.imagenTarjeta {
+    height: 40vh;
+    object-fit: cover;
+    aspect-ratio: 5/4;
+}
+
+.card-title {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.tarjetaServicios {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border-radius: 10px;
+    margin-bottom: 100px;
+    transition: margin-bottom 0s linear;
+    background-image: url('../imagenes/fondotarjeta.svg');
+    background-size: cover;
+    color: white;
+    
+    
+    i {
+        animation: updown 1.5s ease infinite;
+    }
+    .contenidoTarjeta {
+        visibility: hidden;
+        font-weight: bolder;
+        max-height: 0;
+        opacity: 0;
+        transition: opacity 1.3s, max-height 1s, visibility 0.1s ease-in;
+    }
+    &:hover {
+        .contenidoTarjeta {
+            visibility: visible;
+            opacity: 1;
+            max-height: 200px;
+        }
+        i{
+            animation: unset;
+        }
+        transition: .3s ease-in-out;
+        transform: scale(1.01);
+    }
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(-25%);
+    }
+
+    50% {
+        transform: translateY(25%);
+    }
+
+    100% {
+        transform: translateY(-25%);
+    }
+}
+

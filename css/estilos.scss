@@ -1,53 +1,4 @@
-$color-rosa:#FFCBCB;
-$color-rosa-2:#d8a2a1;
-$color-cafe:#483635;
-$color-azul:#0077b6;
-$color-azul-hover:#5999D9;
-$color-naraja:#e07a5f;
-$color-verde:#40916c;
-$color-morado:#BAABDA;
-$color-crema:#f1f1f1;
-$color-plateado:#CFC9C9;
-$tamaño-fuente: ("titulo": 2em, "parrafo": 1.5rem, "textoEspecial" : 1.3rem);
-
-@mixin estiloInput {
-    border-radius: 5px;
-    border: 0;
-    box-shadow: 3px 3px 0px 3px $color-plateado;
-    padding: 5px;
-}
-
-@mixin botonContactoRRSS($color) {
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-    border-radius: 10px;
-    background-color: white;
-    background: linear-gradient(to right, white 58%, $color 50%) left;
-    background-size: 200%;
-    transition: .3s ease-out;
-    a {
-        text-decoration: none;
-    }
-    p {
-        font-size: 1.3em;
-        color: $color;
-        padding-right: 10px;
-        
-        i {
-            font-size: 3em;
-            margin: -7px 0 -7px 0;
-        }
-
-        &:hover {
-            color: white;
-
-        }
-    }
-
-
-    &:hover {
-        background-position: right;
-    }
-}
+@import 'variables';
 
 * {
     box-sizing: border-box;
@@ -63,6 +14,32 @@ body {
     font-size: 1.6em;
     min-height: 100vh;
 }
+
+/* Estilos Header */
+
+.navbar {
+    background-color: $color-rosa;
+}
+
+.navbar {
+    li {
+        a {
+            color: $color-cafe;
+        }
+    }
+}
+
+.navbar {
+    li {
+        padding-left: 0.3em;
+        &:hover {
+            transition: .3s ease-in;
+            transform: scale(1.1);
+        }
+    }
+}
+
+/* Estilos Main */
 
 main {
     flex-grow: 1;
@@ -101,6 +78,43 @@ main {
     transform: translateY(0px);
 }
 
+.colored-section {
+    background-color: $color-rosa;
+}
+
+.purple {
+    color: $color-morado;
+}
+
+/* Estilos Carousel */
+
+.carousel-caption {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 4%, rgba(0, 0, 0, 0.5) 42%, rgba(0, 0, 0, 0.7) 100%);
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.tituloCarousel {
+    @extend .titulos;
+    font-weight: 600;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+        0px 8px 13px rgba(0, 0, 0, 0.1),
+        0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+.parrafoCarousel {
+    @extend .parrafos;
+    font-weight: 500;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+        0px 8px 13px rgba(0, 0, 0, 0.1),
+        0px 18px 23px rgba(0, 0, 0, 0.1);
+}
 .carousel-item {
     img {
         max-height: 80vh;
@@ -108,28 +122,53 @@ main {
         object-fit: cover;
     }
 }
+/* Estilos Botones RRSS */
 
-.navbar {
-    background-color: $color-rosa;
+.blue {
+    color: $color-azul;
 }
 
-.navbar {
-    li {
-        a {
-            color: $color-cafe;
-        }
-    }
+.orange {
+    color: $color-naraja;
 }
 
-.navbar {
-    li {
-        padding-left: 0.3em;
+.green {
+    color: $color-verde;
+}
+
+.rrss {
+    i {
+        font-size: 2em;
+
         &:hover {
-            transition: .3s ease-in;
+            text-shadow: 0 0 2.5px;
+            transition: .2s ease-in;
             transform: scale(1.1);
         }
     }
 }
+
+.redesSociales {
+    text-align: justify;
+    font-weight: bolder;
+    i {
+        vertical-align: middle;
+        padding-right: 10px
+    }
+}
+.rrss-1 {
+    @include botonContactoRRSS($color-azul);
+}
+
+.rrss-2 {
+    @include botonContactoRRSS($color-naraja)
+}
+
+.rrss-3 {
+    @include botonContactoRRSS($color-verde)
+}
+
+/* Estilos Footer */
 
 .footer {
     display: flex;
@@ -165,206 +204,11 @@ main {
     }
 }
 
-.blue {
-    color: $color-azul;
-}
+/* Estilos Secciones */
 
-.orange {
-    color: $color-naraja;
-}
+@import 'galeria', 'servicios','contacto';
 
-.green {
-    color: $color-verde;
-}
-
-.purple {
-    color: $color-morado;
-}
-
-.rrss {
-    i {
-        font-size: 2em;
-
-        &:hover {
-            text-shadow: 0 0 2.5px;
-            transition: .2s ease-in;
-            transform: scale(1.1);
-        }
-    }
-}
-
-.colored-section {
-    background-color: $color-rosa;
-}
-
-.redesSociales {
-    text-align: justify;
-    font-weight: bolder;
-}
-
-.redesSociales {
-    i {
-        vertical-align: middle;
-        padding-right: 10px
-    }
-}
-
-/* css galeria */
-.galeria {
-    position: relative;
-}
-
-.galeria {
-    img {
-        border-radius: 15px;
-    }
-}
-
-.overlay {
-    position: absolute;
-    border-radius: 0 0 15px 15px;
-    bottom: 0;
-    background: $color-rosa;
-    color: $color-crema;
-    width: calc(100% - 1.5rem);
-    transition: .5s ease;
-    opacity: 0;
-    color: $color-cafe;
-    font-size: 1.1em;
-    padding: 20px;
-    font-weight: 900;
-    text-align: center;
-    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
-        0px -5px 35px rgba(255, 255, 255, 0.3);
-}
-
-.galeria {
-    &:hover {
-        .overlay {
-            opacity: 0.8;
-        }
-    }
-}
-
-/* css servicios */
-.tarjetaServicios {
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    border-radius: 10px;
-    margin-bottom: 100px;
-    transition: margin-bottom 0s linear;
-    background-image: url('../imagenes/fondotarjeta.svg');
-    background-size: cover;
-    color: white;
-    text-shadow: -15px 5px 20px #ced0d3;
-    i {
-        animation: updown 1.5s ease infinite;
-    }
-    .contenidoTarjeta {
-        visibility: hidden;
-        max-height: 0;
-        opacity: 0;
-        transition: opacity 1.3s, max-height 1s, visibility 0.1s ease-in;
-    }
-    &:hover {
-        .contenidoTarjeta {
-            visibility: visible;
-            opacity: 1;
-            max-height: 200px;
-        }
-        i{
-            animation: unset;
-        }
-        transition: .3s ease-in-out;
-        transform: scale(1.01);
-    }
-}
-
-@keyframes updown {
-    0% {
-        transform: translateY(-25%);
-    }
-
-    50% {
-        transform: translateY(25%);
-    }
-
-    100% {
-        transform: translateY(-25%);
-    }
-}
-
-.imagenTarjeta {
-    height: 40vh;
-    object-fit: cover;
-    aspect-ratio: 5/4;
-}
-
-/* css contacto */
-.contacto {
-    max-width: 1200px;
-}
-
-.elementosContacto {
-    @include estiloInput;
-    width: 100%;
-}
-
-.botonContacto {
-    @extend .elementosContacto;
-    box-shadow: unset;
-    font-size: 1em;
-    color: $color-crema;
-    background-color: $color-azul;
-
-    &:hover {
-        @extend .botonContacto;
-        transition: ease-in-out .4s;
-        transform: scale(1.05);
-        background-color: $color-azul-hover;
-    }
-}
-
-.carousel-caption {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 4%, rgba(0, 0, 0, 0.5) 42%, rgba(0, 0, 0, 0.7) 100%);
-    width: 100%;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    text-align: center;
-    padding-top: 5px;
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
-.tituloCarousel {
-    @extend .titulos;
-    font-weight: 600;
-    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
-        0px 8px 13px rgba(0, 0, 0, 0.1),
-        0px 18px 23px rgba(0, 0, 0, 0.1);
-}
-
-.parrafoCarousel {
-    @extend .parrafos;
-    font-weight: 500;
-    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
-        0px 8px 13px rgba(0, 0, 0, 0.1),
-        0px 18px 23px rgba(0, 0, 0, 0.1);
-}
-
-/* botones rrss */
-
-.rrss-1 {
-    @include botonContactoRRSS($color-azul);
-}
-
-.rrss-2 {
-    @include botonContactoRRSS($color-naraja)
-}
-
-.rrss-3 {
-    @include botonContactoRRSS($color-verde)
-}
+/* Media Querys */
 
 @media only screen and (max-width: 1200px) {
     body {
@@ -416,6 +260,9 @@ main {
     .parrafoInformacion {
         font-size: calc(#{map-get($tamaño-fuente, "textoEspecial")}/1.3);
     }
+    .card-title {
+        font-size: 0.9em;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -462,6 +309,9 @@ main {
         ul {
             display: none;
         }
+    }
+    .card-title {
+        font-size: 1.5em;
     }
 }
 
