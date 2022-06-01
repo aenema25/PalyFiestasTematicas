@@ -38,7 +38,10 @@ body {
         }
     }
 }
-
+.logo {
+    width:180px;
+    height:80px;
+}
 /* Estilos Main */
 
 main {
@@ -351,8 +354,62 @@ main {
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 460px) {
+    .logo {
+        width:160px;
+        height:70px;
+    }
     .imagenTarjeta {
         height: 35vh;
+    }
+    .rrss-1,
+    .rrss-2,
+    .rrss-3 {
+        p {
+            font-size: 1.1em;
+        }
+    }
+}
+
+@media only screen and (max-width: 401px) {
+    .logo {
+        width:140px;
+        height: 60px;
+    }
+    .rrss {
+        i {
+            font-size: 1.5em;
+        }
+    }
+    .rrss-1,
+    .rrss-2,
+    .rrss-3 {
+        p {
+            font-size: 0.9em;
+            i {
+                margin: -4px 0 -4px 0;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 350px) {
+    .logo {
+        width:120px;
+        height: 50px;
+    }
+    .rrss {
+        i {
+            font-size: 1.3em;
+        }
+    }
+    .rrss-1,
+    .rrss-2,
+    .rrss-3 {
+        p {
+            font-size: 0.7em;
+            i {
+                margin: -3.1px 0 -3.1px 0;
+            }
+        }
     }
 }

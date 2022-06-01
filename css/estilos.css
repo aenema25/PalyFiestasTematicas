@@ -30,6 +30,11 @@ body {
   transform: scale(1.1);
 }
 
+.logo {
+  width: 180px;
+  height: 80px;
+}
+
 /* Estilos Main */
 main {
   flex-grow: 1;
@@ -303,7 +308,7 @@ main {
 .tarjetaServicios:hover .contenidoTarjeta {
   visibility: visible;
   opacity: 1;
-  max-height: 200px;
+  max-height: 300px;
 }
 .tarjetaServicios:hover i {
   animation: unset;
@@ -475,9 +480,62 @@ main {
     display: none;
   }
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 460px) {
+  .logo {
+    width: 160px;
+    height: 70px;
+  }
+
   .imagenTarjeta {
     height: 35vh;
+  }
+
+  .rrss-1 p,
+.rrss-2 p,
+.rrss-3 p {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (max-width: 401px) {
+  .logo {
+    width: 140px;
+    height: 60px;
+  }
+
+  .rrss i {
+    font-size: 1.5em;
+  }
+
+  .rrss-1 p,
+.rrss-2 p,
+.rrss-3 p {
+    font-size: 0.9em;
+  }
+  .rrss-1 p i,
+.rrss-2 p i,
+.rrss-3 p i {
+    margin: -4px 0 -4px 0;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .logo {
+    width: 120px;
+    height: 50px;
+  }
+
+  .rrss i {
+    font-size: 1.3em;
+  }
+
+  .rrss-1 p,
+.rrss-2 p,
+.rrss-3 p {
+    font-size: 0.7em;
+  }
+  .rrss-1 p i,
+.rrss-2 p i,
+.rrss-3 p i {
+    margin: -3.1px 0 -3.1px 0;
   }
 }
 
